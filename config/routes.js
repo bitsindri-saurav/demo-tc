@@ -19,20 +19,20 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
-  'get /dashboard': 'IndexController.dashboard', 
-  'get /contacts': 'IndexController.contacts',
-  'get /profile' : 'IndexController.profile',
-  'get /support' :'IndexController.support',
-  'get /upcomingcompanies' : 'IndexController.upcomp',
-  'get /visitedcompanies' : 'IndexController.visitcomp',
-  'get /nutriworkouts'    : 'IndexController.nutri',
-  'post /upload' : 'IndexController.upload',
-  'get /login': 'IndexController.login',
-  'get /usersignup' : 'IndexController.signup',
-  'get /demo' : 'IndexController.demo',
+  // '/': { view: 'pages/homepage' },
+  // 'get /dashboard': 'IndexController.dashboard', 
+  // 'get /contacts': 'IndexController.contacts',
+  // 'get /profile' : 'IndexController.profile',
+  // 'get /support' :'IndexController.support',
+  // 'get /upcomingcompanies' : 'IndexController.upcomp',
+  // 'get /visitedcompanies' : 'IndexController.visitcomp',
+  // 'get /nutriworkouts'    : 'IndexController.nutri',
+  // 'post /upload' : 'IndexController.upload',
+  // 'get /login': 'IndexController.login',
+  // 'get /usersignup' : 'IndexController.signup',
+  'get /' : 'IndexController.demo',
   'get /demo1': 'IndexController.demo1',
-  'post /search' : 'IndexController.search'
+  // 'post /search' : 'IndexController.search'
 
 
   /***************************************************************************
