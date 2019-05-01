@@ -1,0 +1,294 @@
+<body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu 2-columns  " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
+
+    <!-- BEGIN: Header-->
+    <header class="page-topbar" id="header">
+        <div class="navbar navbar-fixed"> 
+          <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
+            <div class="nav-wrapper">
+                <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
+                  <input class="header-search-input z-depth-2" type="text" name="Search" placeholder="Explore Materialize">
+                  
+                </div> 
+              
+              <!-- translation-button-->
+              
+              <!-- notifications-dropdown-->
+              
+              <!-- profile-dropdown-->
+              
+            </div>
+
+          </nav>
+        </div>
+      </header>
+    <!-- END: Header-->
+
+
+
+    <!-- BEGIN: SideNav-->
+<!-- <%- include navbar%> -->
+    <!-- END: SideNav-->
+
+    <!-- BEGIN: Page Main-->
+    <div id="main">
+            <!--Basic Tabs-->
+
+  <div class="row">
+    
+      <div class="row" >
+          <div class="col s2">
+          </div>
+          <div class="col s6 ">
+
+            <div class="row">
+              <div class="input-field col s12">
+                
+                <!-- <i class="material-icons prefix">search</i> -->
+                <!-- <input type="text" id="Search" class="autocomplete">  -->
+                <!-- <i class="material-icons suffix">search</i> -->
+                <!-- <label for="autocomplete-input">Enter Your Favorite Artist</label> -->
+                <button id="search-btn" class="btn mb-1 waves-effect waves-light " type="submit" name="action">Search Again
+                    <i class="material-icons right">search</i>
+                  </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div id="testing"> 
+
+        </div>
+        <div class="col s12 m12 l12">
+            <div id="basic-tabs" class="card card card-default scrollspy">
+              <div class="card-content">
+                <div class="card-title">
+                  <div class="row">
+                    
+                    
+                  </div>
+                </div>
+                <div class="col s12">
+                  <div class="row" id="main-view">
+                    <div class="col s12">
+                      <ul class="tabs tab-demo z-depth-1">
+                        <li class="tab col m3"><a class="active" href="#test1">Info</a>
+                        </li>
+                        <li class="tab col m3"><a href="#test2">Top Albums</a>
+                        </li>
+                        <li class="tab col m3"><a href="#test3">Top Tracks</a>
+                        </li>
+                        <li class="tab col m3"><a href="#test4">Similar </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col s12">
+                      <div id="test1" class="col s12">
+                        
+                              <div class="row">
+                                      <div class="col s12 m12 l12">
+                                        <div id="jquery-plugin" class="card card card-default">
+                                          <div class="card-content">
+                                            <h4 class="card-title text-bold"><%= info.name%></h4>
+                                            <div class="row">
+                                              <div class="col s12">
+                                                <table class="highlight">
+                                                  
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>Name</td>
+                                                      <td><%= info.name%></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Listeners</td>
+                                                        <td><%= info.listeners%></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>Biography</td>
+                                                          <td><%= info.summary%></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tags</td>
+                                                            <td>
+                                                                <% info.tags.forEach(function(doc) { %>
+                                                              <span class="new badge gradient-45deg-light-blue-cyan" data-badge-caption="<%= doc %>"></span>
+                                                              <% }) %>
+                                                            </td>
+                                                          </tr>
+                                                    
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                            <h4>Similar</h4>
+                                            <div class="row">
+                                                <% info.similar.forEach(function(doc) { %>
+                                                <div class="col s12 m6 l3 card-width">
+                                                      <div class="card border-radius-6">
+                                                            <div class="card-content center-align">
+                                                                  <i class="material-icons amber-text small-ico-bg mb-5">music_note</i>
+                                                                  <h5 class="m-0"><b><%= doc.name %></b></h5>
+                                                                  <!-- <p>Total Views</p> -->
+                                                                  <!-- <p class="green-text  mt-3"><i class="material-icons vertical-align-middle">arrow_drop_up</i>
+                                                                        119.71%</p> -->
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                                <% }) %>
+                                                
+                                          </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                        
+                      </div>
+                      <div id="test2" class="col s12">
+                          <h5>Top Albums of <%= info.name %> </h5>
+                          
+                          <div class="row">
+                              <% albums.forEach(function(doc) { %>
+                              <div class="col s12 m3">
+                                    <div class="card gradient-shadow gradient-45deg-light-blue-cyan border-radius-3">
+                                          <div class="card-content center">
+                                            <% if (doc.images[0]!= undefined) {%>
+                                                <img src="<%= doc.images[0] %>" alt="" class="width-40">
+                                                <% } else {%>
+                                              
+                                                <img src="<%= info.images[0]%>" alt="" class="width-40">
+                                                <% }%>
+                                                <h6 class="white-text lighten-4"><%= doc.listeners %> Plays </h6> 
+                                                <p class="white-text lighten-4"><%= doc.name %></p>
+                                          </div>
+                                    </div>
+                              </div>
+                              <% }) %>
+                              
+                        </div>
+                        
+                      </div>
+                      <div id="test3" class="col s12">
+                          <h5>Top Tracks of <%= info.name %> </h5>
+                          <div class="row">
+                              <div class="col s12 m12 l12">
+                                <div id="bordered-table" class="card card card-default scrollspy">
+                                  <div class="card-content">
+                                    <div class="row">
+                                      <div class="col s12">
+                                      </div>
+                                      <div class="col s12">
+                                        <table class="bordered">
+                                          <thead>
+                                            <tr>
+                                              <th data-field="id">Name</th>
+                                              <th data-field="name">Artist Name</th>
+                                              <th data-field="price">Listeners</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                              <% tracks.forEach(function(doc) { %>
+                                            <tr>
+                                              <td><%= doc.name%></td>
+                                              <td><%= doc.artistName%></td>
+                                              <td><%= doc.listeners%></td>
+                                            </tr>
+                                            <% }) %>
+                                            
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        
+                      </div>
+                      <div id="test4" class="col s12">
+                        <h4>Similar</h4>
+                          <% similar.forEach(function(doc) { %>
+                            <div class="col s12 m3">
+                                  <div class="card gradient-shadow gradient-45deg-light-blue-cyan border-radius-3">
+                                        <div class="card-content center">
+                                            <i class="material-icons amber-text small-ico-bg mb-5">play_circle_filled</i>
+                                              <img src="<%= doc.image[0] %>" alt="" class="width-40">
+                                              <h5 class="white-text lighten-4"> <a class="white-text"href="<%= doc.url%>"> <%= doc.name %> </a></h5>
+                                              <!-- <p class="white-text lighten-4"><%= doc.url %></p> -->
+                                        </div>
+                                  </div>
+                            </div>
+                            <% }) %>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+      
+               
+              </div>
+            </div>
+          </div>
+  </div>
+   </div>
+
+
+          
+
+    <!-- END: Page Main-->
+
+    <!-- Theme Customizer -->
+
+
+
+    <!-- BEGIN: Footer-->
+
+<%- include footer%>
+
+    <%- include scripts %>
+   
+    <script src = "../../../app-assets/js/BlockUI.js" type ="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+          $('#noti').hide();
+          $('#noti1').hide();
+          $('#noti2').hide();  
+          var check = $('#Search').val();
+        
+        
+          // $('#testing').append('<h1> chgchchcj</h1>')
+          $('#search-btn').click(function(){
+              window.location.reload();
+            // $('body').hide();
+            $('#noti2').hide();
+            $('#noti').hide();
+          $('#noti1').hide();
+            $('#noti').show();
+            console.log("Demo")
+            var search = $('#Search').val();
+            if (!search)
+            {$('#noti').hide();
+              $('#noti1').show();
+            }
+            else{
+              $.get("/demo1", {search:search}, function(res){
+                if(res.code==1){
+                  $('#noti').hide();
+                  $('#noti2').show();
+                }
+                else{
+                  console.log(res)
+              $('body').replaceWith(res)
+              console.log("done")
+                }
+              
+              // setTimeout("location.reload(true);",200);
+            })
+            }
+            
+            console.log("Seacrh", search)
+          })
+            
+        }); 
+        
+            </script>
+  </body>
