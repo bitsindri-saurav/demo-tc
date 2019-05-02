@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="../../../app-assets/images/favicon/apple-touch-icon-152x152.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/favicon/favicon-32x32.png">
     <%- include styles %>
+    
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
@@ -20,11 +21,9 @@
         <div class="navbar navbar-fixed"> 
           <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
             <div class="nav-wrapper">
-                <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
-                  <input class="header-search-input z-depth-2" type="text" name="Search" placeholder="Explore Materialize">
+                
                   
-                </div> 
-              
+              <h6 style="text-align: center;color: white; padding-top: 10px">Truecaller Intern Assignment</h6>
               <!-- translation-button-->
               
               <!-- notifications-dropdown-->
@@ -51,21 +50,19 @@
   <div class="row">
     
       <div class="row" >
+        
           <div class="col s2">
           </div>
           <div class="col s6 ">
 
             <div class="row">
               <div class="input-field col s12">
-                
-                <!-- <i class="material-icons prefix">search</i> -->
+
                 <input type="text" id="Search" class="autocomplete" required> 
-                <!-- <i class="material-icons suffix">search</i> -->
-                <label for="autocomplete-input">Enter Your Favorite Artist</label>
-                <button id="search-btn" class="btn mb-1 waves-effect waves-light " type="submit" name="action">Search
-                    <i class="material-icons right">search</i>
-                  </button>
-                  </div>
+             
+                <label for="autocomplete-input">Search Your Favorite Music Artist</label>
+                <a id="search-btn" class="btn" style="background-color: blue">Search</a>
+              </div>
               </div>
               <div id = "noti2"class="card-alert card gradient-45deg-red-pink">
                   <div class="card-content white-text">
@@ -121,11 +118,11 @@
    
     <script src = "../../../app-assets/js/BlockUI.js" type ="text/javascript"></script>
     <script type="text/javascript">
-
-$(document).ready(function() {
   $('#noti').hide();
   $('#noti1').hide();
-  $('#noti2').hide();  
+  $('#noti2').hide(); 
+$(document).ready(function() {
+ 
   var check = $('#Search').val();
 
 
