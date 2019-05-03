@@ -1,4 +1,4 @@
-# student-portal
+# Demo True Caller
 
 a [Sails v1](https://sailsjs.com) application
 
