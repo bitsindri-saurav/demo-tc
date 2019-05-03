@@ -7,7 +7,6 @@
 
 module.exports = {
 
-
   demo: function(req,res){
     res.render("pages/demo")
   },  
@@ -60,4 +59,6 @@ module.exports = {
       })
 
  } ,
-}
+
+};
+
